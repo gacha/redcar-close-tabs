@@ -15,7 +15,6 @@ module Redcar
       window = Redcar.app.focussed_window
       tabs = window.all_tabs
       tabs.each do |t|
-        t.focus
         Redcar::Top::CloseTabCommand.new(t).run
       end
     end
@@ -27,7 +26,6 @@ module Redcar
       current_tab = Redcar.app.focussed_notebook_tab
       tabs = window.all_tabs
       tabs.each do |t|
-        t.focus
         unless t == current_tab
           Redcar::Top::CloseTabCommand.new(t).run
         end
